@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.69])
 AC_INIT([hoho], [0.1.0], [attila.gobi@gmail.com])
-AC_CONFIG_SRCDIR([src/hoho.c])
+AC_CONFIG_SRCDIR([src/hoho.cc])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_AUX_DIR([build-aux])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign subdir-objects])
@@ -14,7 +14,7 @@ AC_PROG_CXX
 
 # Checks for libraries.
 AC_LANG([C++], [C])
-PKG_CHECK_MODULES([PULSE], [libpulse])
+PKG_CHECK_MODULES([RTAUDIO], [rtaudio])
 
 # Checks for header files.
 AC_CHECK_HEADERS([fcntl.h string.h unistd.h])
@@ -46,7 +46,7 @@ Configure Information:
   Linker            : $LD
     LDFLAGS         :   $LDFLAGS
     LIBS            :   $LIBS
-  Pulse
-    CFLAGS          : $PULSE_CFLAGS
-    LIBS            : $PULSE_LIBS
+  RtAudio
+    CFLAGS          : $RTAUDIO_CFLAGS
+    LIBS            : $RTAUDIO_LIBS
 ])
